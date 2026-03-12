@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Name - ShopNow</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .main-img { max-height: 500px; object-fit: contain; background: white; border: 1px solid #dee2e6; border-radius: 8px; }
+    .thumb-img { height: 80px; object-fit: contain; cursor: pointer; border: 2px solid transparent; opacity: 0.7; }
+    .thumb-img.active { border-color: var(--primary); opacity: 1; }
+    .product-meta { font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar (copy from shop.html or index.html) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">ShopNow</a>
+    <!-- ... rest of navbar same as previous pages ... -->
+  </div>
+</nav>
+
+<!-- Breadcrumb -->
+<section class="py-3 bg-light">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Wireless Earbuds Pro</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- Product Detail -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Images -->
+      <div class="col-lg-6 mb-4">
+        <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800" id="mainImage" class="main-img img-fluid mb-3" alt="Product">
+        <div class="row g-2">
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=300" class="thumb-img img-fluid active" data-full="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800" alt="Thumb 1"></div>
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=300&crop=entropy" class="thumb-img img-fluid" data-full="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800&crop=entropy" alt="Thumb 2"></div>
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=300&h=300" class="thumb-img img-fluid" data-full="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800" alt="Thumb 3"></div>
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=300&fit=crop" class="thumb-img img-fluid" data-full="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800" alt="Thumb 4"></div>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="col-lg-6">
+        <h2 class="mb-3">Wireless Earbuds Pro</h2>
+        <div class="mb-3">
+          <span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+          <span class="ms-2 text-muted">(128 reviews)</span>
+        </div>
+        <h4 class="text-primary mb-4">₹3,499 <small class="text-muted text-decoration-line-through">₹4,999</small> <span class="badge bg-success ms-2">30% OFF</span></h4>
+
+        <p class="lead mb-4">Premium true wireless earbuds with active noise cancellation, 40-hour battery life, IPX4 water resistance, and crystal-clear calls. Perfect for music, workouts, and meetings.</p>
+
+        <div class="mb-4">
+          <h6>Key Features:</h6>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check text-success me-2"></i>Active Noise Cancellation (ANC)</li>
+            <li><i class="fas fa-check text-success me-2"></i>Bluetooth 5.2</li>
+            <li><i class="fas fa-check text-success me-2"></i>Fast Charging – 10 min = 2 hours playtime</li>
+            <li><i class="fas fa-check text-success me-2"></i>Touch Controls</li>
+          </ul>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-6 col-sm-4">
+            <label class="form-label">Quantity</label>
+            <div class="input-group">
+              <button class="btn btn-outline-secondary" id="qtyMinus">-</button>
+              <input type="number" id="quantity" class="form-control text-center" value="1" min="1">
+              <button class="btn btn-outline-secondary" id="qtyPlus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-grid gap-3 d-md-block">
+          <button class="btn btn-primary btn-lg px-5 add-to-cart"
+                  data-id="1"
+                  data-name="Wireless Earbuds Pro"
+                  data-price="3499"
+                  data-image="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=500">
+            <i class="fas fa-cart-plus me-2"></i>Add to Cart
+          </button>
+          <button class="btn btn-outline-secondary btn-lg px-5"><i class="far fa-heart me-2"></i>Wishlist</button>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="product-meta">
+          <p><strong>Category:</strong> Electronics > Audio</p>
+          <p><strong>Availability:</strong> <span class="text-success">In Stock</span></p>
+          <p><strong>Shipping:</strong> Free delivery on orders over ₹999</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="mt-5">
+      <h3 class="mb-4">You May Also Like</h3>
+      <div class="row g-4" id="relatedProducts">
+        <!-- Filled dynamically or static -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer (same as before) -->
+<footer class="py-5">
+  <!-- ... copy from previous pages ... -->
+</footer>
+
+<!-- Auth Modal (copy) -->
+<!-- ... same modal ... -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+// Thumbnail switch
+document.querySelectorAll('.thumb-img').forEach(thumb => {
+  thumb.addEventListener('click', () => {
+    document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+    document.getElementById('mainImage').src = thumb.dataset.full;
+  });
+});
+
+// Quantity controls
+document.getElementById('qtyPlus')?.addEventListener('click', () => {
+  document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) + 1;
+});
+document.getElementById('qtyMinus')?.addEventListener('click', () => {
+  const qty = document.getElementById('quantity');
+  if (qty.value > 1) qty.value = parseInt(qty.value) - 1;
+});
+
+// Related products (sample)
+const related = [
+  {id:2, name:"Smart Fitness Band", price:2499, image:"https://images.unsplash.com/photo-1576243345690-4e4b79b273ff?w=500"},
+  {id:6, name:"4K Action Camera", price:7999, image:"https://images.unsplash.com/photo-1617814088058-3e3d6d3d3d3d?w=500"},
+];
+const relContainer = document.getElementById('relatedProducts');
+related.forEach(p => {
+  relContainer.innerHTML += `
+    <div class="col-md-3 col-sm-6">
+      <div class="card h-100">
+        <img src="${p.image}" class="product-img card-img-top" alt="${p.name}">
+        <div class="card-body">
+          <h6>${p.name}</h6>
+          <p class="fw-bold">₹${p.price.toLocaleString('en-IN')}</p>
+          <a href="product.html" class="btn btn-sm btn-outline-primary w-100">View</a>
+        </div>
+      </div>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>

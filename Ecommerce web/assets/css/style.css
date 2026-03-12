@@ -1,0 +1,65 @@
+:root {
+  --primary: #0d6efd;
+  --primary-dark: #0b5ed7;
+  --gray: #f8f9fa;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url('https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=2070');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 150px 0 120px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.product-img {
+  height: 260px;
+  object-fit: contain;
+  background: #fff;
+  padding: 15px;
+}
+
+.btn-cart {
+  font-size: 0.9rem;
+}
+
+#cart-count {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+}
+
+footer {
+  background: #212529;
+  color: #adb5bd;
+}
+
+footer a {
+  color: #ced4da;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Settings - ShopNow</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .profile-sidebar {
+      background: #f8f9fa;
+      border-right: 1px solid #dee2e6;
+      min-height: 500px;
+    }
+    .settings-tab .nav-link {
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
+      transition: all 0.2s;
+    }
+    .settings-tab .nav-link.active,
+    .settings-tab .nav-link:hover {
+      background-color: #0d6efd1a;
+      color: #0d6efd;
+      border-color: #0d6efd;
+    }
+    .settings-tab .nav-link i {
+      width: 24px;
+      text-align: center;
+    }
+    .card-settings {
+      border: none;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .card-header-settings {
+      background: linear-gradient(90deg, #0d6efd, #0b5ed7);
+      color: white;
+      border-radius: 1rem 1rem 0 0 !important;
+      padding: 1.25rem 1.5rem;
+    }
+    .form-label {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .input-group-text {
+      background-color: #f1f3f5;
+    }
+    .btn-primary {
+      padding: 0.65rem 1.5rem;
+      font-weight: 500;
+    }
+    .form-switch .form-check-input {
+      width: 3rem;
+      height: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar (copy from previous pages) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">ShopNow</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="profile.html"><i class="fas fa-user-circle me-1"></i>Account</a></li>
+        <li class="nav-item">
+          <a class="nav-link position-relative" href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container py-5">
+  <div class="row">
+
+    <!-- Sidebar Navigation -->
+    <div class="col-lg-3 mb-4 mb-lg-0">
+      <div class="profile-sidebar p-4 rounded shadow-sm">
+        <div class="text-center mb-5">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200" alt="Profile" class="rounded-circle mb-3" style="width:110px; height:110px; object-fit:cover; border:4px solid #fff; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+          <h5>Shraddha</h5>
+          <p class="text-muted small mb-1">shraddha@example.com</p>
+          <span class="badge bg-success-subtle text-success px-3 py-1">Verified</span>
+        </div>
+
+        <ul class="nav flex-column account-nav">
+          <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-home me-2"></i>Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="orders.html"><i class="fas fa-shopping-bag me-2"></i>Orders</a></li>
+          <li class="nav-item"><a class="nav-link" href="wishlist.html"><i class="fas fa-heart me-2"></i>Wishlist</a></li>
+          <li class="nav-item"><a class="nav-link active" href="settings.html"><i class="fas fa-cog me-2"></i>Settings</a></li>
+          <li class="nav-item mt-4"><a class="nav-link text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Settings Content -->
+    <div class="col-lg-9">
+      <h3 class="mb-4 pb-2 border-bottom">
+        <i class="fas fa-sliders-h text-primary me-3"></i>Account Settings
+      </h3>
+
+      <div class="settings-tab">
+        <ul class="nav nav-tabs mb-4 flex-nowrap overflow-auto" id="settingsTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active d-flex align-items-center" id="password-tab" data-bs-toggle="tab" data-bs-target="#password" type="button">
+              <i class="fas fa-key me-2"></i> Password
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link d-flex align-items-center" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button">
+              <i class="fas fa-shield-alt me-2"></i> Security
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link d-flex align-items-center" id="notifications-tab" data-bs-toggle="tab" data-bs-target="#notifications" type="button">
+              <i class="fas fa-bell me-2"></i> Notifications
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link d-flex align-items-center" id="email-tab" data-bs-toggle="tab" data-bs-target="#email" type="button">
+              <i class="fas fa-envelope me-2"></i> Email
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- ── Password ──────────────────────────────────────────────── -->
+          <div class="tab-pane fade show active" id="password">
+            <div class="card-settings">
+              <div class="card-header-settings">
+                <h5 class="mb-0"><i class="fas fa-lock me-2"></i>Change Password</h5>
+              </div>
+              <div class="card-body p-4">
+                <form>
+                  <div class="mb-4">
+                    <label class="form-label">Current Password</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fas fa-key"></i></span>
+                      <input type="password" class="form-control" required>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label">New Password</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                      <input type="password" class="form-control" required>
+                    </div>
+                    <div class="form-text text-muted mt-1">Minimum 8 characters, include uppercase, number & symbol</div>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label">Confirm New Password</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                      <input type="password" class="form-control" required>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary px-5">
+                    <i class="fas fa-save me-2"></i>Update Password
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Security / 2FA ────────────────────────────────────────── -->
+          <div class="tab-pane fade" id="security">
+            <div class="card-settings">
+              <div class="card-header-settings">
+                <h5 class="mb-0"><i class="fas fa-shield-alt me-2"></i>Security & Two-Factor Authentication</h5>
+              </div>
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div>
+                    <h6 class="mb-1">Two-Factor Authentication</h6>
+                    <p class="text-muted mb-0 small">Protect your account with an extra layer of security</p>
+                  </div>
+                  <div class="form-check form-switch form-switch-lg">
+                    <input class="form-check-input" type="checkbox" id="enable2fa" checked>
+                  </div>
+                </div>
+
+                <div class="alert alert-info mb-4" role="alert">
+                  <i class="fas fa-info-circle me-2"></i>
+                  2FA is currently <strong>enabled</strong> via Google Authenticator.
+                </div>
+
+                <button class="btn btn-outline-primary me-2 mb-3">
+                  <i class="fas fa-sync-alt me-2"></i>Reconfigure 2FA
+                </button>
+                <button class="btn btn-outline-danger mb-3">
+                  <i class="fas fa-ban me-2"></i>Disable 2FA
+                </button>
+
+                <hr class="my-4">
+
+                <h6 class="mb-3">Active Sessions</h6>
+                <div class="list-group">
+                  <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                      <strong>Chrome on Windows</strong><br>
+                      <small class="text-muted">Pune, Maharashtra • Active now</small>
+                    </div>
+                    <button class="btn btn-sm btn-outline-danger">Log out</button>
+                  </div>
+                  <!-- more session items can be added here -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Notifications ─────────────────────────────────────────── -->
+          <div class="tab-pane fade" id="notifications">
+            <div class="card-settings">
+              <div class="card-header-settings">
+                <h5 class="mb-0"><i class="fas fa-bell me-2"></i>Notification Preferences</h5>
+              </div>
+              <div class="card-body p-4">
+                <div class="form-check form-switch mb-3">
+                  <input class="form-check-input" type="checkbox" id="orderUpdates" checked>
+                  <label class="form-check-label" for="orderUpdates">
+                    Order status updates (shipping, delivery, etc.)
+                  </label>
+                </div>
+                <div class="form-check form-switch mb-3">
+                  <input class="form-check-input" type="checkbox" id="promotions" checked>
+                  <label class="form-check-label" for="promotions">
+                    Promotions, deals & exclusive offers
+                  </label>
+                </div>
+                <div class="form-check form-switch mb-3">
+                  <input class="form-check-input" type="checkbox" id="reviews" checked>
+                  <label class="form-check-label" for="reviews">
+                    Product review & rating reminders
+                  </label>
+                </div>
+                <div class="form-check form-switch mb-4">
+                  <input class="form-check-input" type="checkbox" id="news">
+                  <label class="form-check-label" for="news">
+                    New arrivals & featured collections
+                  </label>
+                </div>
+
+                <button class="btn btn-primary px-5">
+                  <i class="fas fa-save me-2"></i>Save Preferences
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Email Preferences ────────────────────────────────────── -->
+          <div class="tab-pane fade" id="email">
+            <div class="card-settings">
+              <div class="card-header-settings">
+                <h5 class="mb-0"><i class="fas fa-envelope me-2"></i>Email Preferences</h5>
+              </div>
+              <div class="card-body p-4">
+                <p class="text-muted mb-4">Select the types of emails you'd like to receive from ShopNow.</p>
+
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" id="essential" checked disabled>
+                  <label class="form-check-label" for="essential">
+                    Essential emails (order confirmations, shipping updates)
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" id="newsletter" checked>
+                  <label class="form-check-label" for="newsletter">
+                    Weekly newsletter & best deals
+                  </label>
+                </div>
+                <div class="form-check mb-4">
+                  <input class="form-check-input" type="checkbox" id="surveys">
+                  <label class="form-check-label" for="surveys">
+                    Product feedback surveys & improvement requests
+                  </label>
+                </div>
+
+                <button class="btn btn-primary px-5">
+                  <i class="fas fa-save me-2"></i>Update Email Settings
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer (same as previous pages) -->
+<footer class="py-5 bg-dark text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5>ShopNow</h5>
+        <p>Secure • Fast • Enjoyable Shopping Experience</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="shop.html" class="text-white text-decoration-none">Shop</a></li>
+          <li><a href="profile.html" class="text-white text-decoration-none">My Account</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Contact</h5>
+        <p>support@shopnow.in<br>+91 98765 43210</p>
+      </div>
+    </div>
+    <hr class="bg-secondary">
+    <p class="text-center mb-0">© 2026 ShopNow. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
