@@ -6,6 +6,8 @@
   <title>Product Name - ShopNow</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     .main-img { max-height: 500px; object-fit: contain; background: white; border: 1px solid #dee2e6; border-radius: 8px; }
@@ -16,13 +18,7 @@
 </head>
 <body>
 
-<!-- Navbar (copy from shop.html or index.html) -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">ShopNow</a>
-    <!-- ... rest of navbar same as previous pages ... -->
-  </div>
-</nav>
+<div id="site-header"></div>
 
 <!-- Breadcrumb -->
 <section class="py-3 bg-light">
@@ -43,12 +39,12 @@
     <div class="row">
       <!-- Images -->
       <div class="col-lg-6 mb-4">
-        <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800" id="mainImage" class="main-img img-fluid mb-3" alt="Product">
+        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800" id="mainImage" class="main-img img-fluid mb-3" alt="Product">
         <div class="row g-2">
-          <div class="col-3"><img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=300" class="thumb-img img-fluid active" data-full="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800" alt="Thumb 1"></div>
-          <div class="col-3"><img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=300&crop=entropy" class="thumb-img img-fluid" data-full="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800&crop=entropy" alt="Thumb 2"></div>
-          <div class="col-3"><img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=300&h=300" class="thumb-img img-fluid" data-full="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800" alt="Thumb 3"></div>
-          <div class="col-3"><img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=300&fit=crop" class="thumb-img img-fluid" data-full="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800" alt="Thumb 4"></div>
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=300" class="thumb-img img-fluid active" data-full="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800" alt="Thumb 1"></div>
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=300&crop=entropy" class="thumb-img img-fluid" data-full="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&crop=entropy" alt="Thumb 2"></div>
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=300&h=300" class="thumb-img img-fluid" data-full="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800" alt="Thumb 3"></div>
+          <div class="col-3"><img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=300&fit=crop" class="thumb-img img-fluid" data-full="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800" alt="Thumb 4"></div>
         </div>
       </div>
 
@@ -89,7 +85,7 @@
                   data-id="1"
                   data-name="Wireless Earbuds Pro"
                   data-price="3499"
-                  data-image="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=500">
+                  data-image="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=500">
             <i class="fas fa-cart-plus me-2"></i>Add to Cart
           </button>
           <button class="btn btn-outline-secondary btn-lg px-5"><i class="far fa-heart me-2"></i>Wishlist</button>
@@ -115,10 +111,7 @@
   </div>
 </section>
 
-<!-- Footer (same as before) -->
-<footer class="py-5">
-  <!-- ... copy from previous pages ... -->
-</footer>
+<div id="site-footer"></div>
 
 <!-- Auth Modal (copy) -->
 <!-- ... same modal ... -->
@@ -147,8 +140,8 @@ document.getElementById('qtyMinus')?.addEventListener('click', () => {
 
 // Related products (sample)
 const related = [
-  {id:2, name:"Smart Fitness Band", price:2499, image:"https://images.unsplash.com/photo-1576243345690-4e4b79b273ff?w=500"},
-  {id:6, name:"4K Action Camera", price:7999, image:"https://images.unsplash.com/photo-1617814088058-3e3d6d3d3d3d?w=500"},
+  {id:2, name:"Smart Fitness Band", price:2499, image:"https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=500"},
+  {id:6, name:"4K Action Camera", price:7999, image:"https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500"},
 ];
 const relContainer = document.getElementById('relatedProducts');
 related.forEach(p => {

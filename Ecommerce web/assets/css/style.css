@@ -63,3 +63,49 @@ footer a {
 footer a:hover {
   color: white;
 }
+/* ---- Refreshed design ---- */
+body { font-family: 'Poppins', 'Segoe UI', sans-serif; background: #f7f8fc; color: #1f2937; }
+.topbar { background: #111827; color: #cbd5e1; font-size: .8rem; padding: 6px 0; }
+.site-navbar { background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.06); padding: .75rem 0; }
+.site-navbar .nav-link { color: #374151; font-weight: 500; }
+.site-navbar .nav-link.active, .site-navbar .nav-link:hover { color: var(--primary); }
+.navbar-brand { color: #111827 !important; display: flex; align-items: center; gap: .5rem; }
+.navbar-brand span:last-child { color: var(--primary); }
+.brand-mark { background: var(--primary); color: #fff; width: 36px; height: 36px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; }
+.nav-search { position: relative; min-width: 260px; }
+.nav-search i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; }
+.nav-search input { padding-left: 38px; border-radius: 50px; background: #f3f4f6; border: none; }
+.nav-icons .nav-link { font-size: 1.15rem; padding: .5rem .75rem !important; }
+.cart-badge { position: absolute; top: 0; right: 0; background: #ef4444; color: #fff; border-radius: 50px; font-size: .65rem; padding: 2px 6px; }
+.btn-primary { border-radius: 10px; font-weight: 500; }
+.page-title { font-weight: 700; }
+.product-card { background: #fff; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 18px rgba(0,0,0,.06); transition: transform .25s, box-shadow .25s; }
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 14px 34px rgba(0,0,0,.12); }
+.product-media { position: relative; display: block; aspect-ratio: 1; overflow: hidden; background: #f3f4f6; }
+.product-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.product-card:hover .product-media img { transform: scale(1.06); }
+.product-badge, .discount-badge { position: absolute; top: 12px; z-index: 1; font-size: .7rem; font-weight: 600; padding: 4px 10px; border-radius: 50px; color: #fff; }
+.product-badge { left: 12px; background: var(--primary); }
+.discount-badge { right: 12px; background: #16a34a; }
+.product-body { padding: 1rem; display: flex; flex-direction: column; flex: 1; }
+.product-category { font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: #9ca3af; }
+.product-title a { color: #111827; text-decoration: none; font-weight: 600; }
+.product-rating { font-size: .8rem; margin-bottom: .5rem; }
+.stars { color: #f59e0b; margin-right: 4px; }
+.product-price { margin-bottom: .75rem; }
+.product-price .price { font-weight: 700; font-size: 1.1rem; }
+.product-price .mrp { text-decoration: line-through; color: #9ca3af; font-size: .85rem; margin-left: 6px; }
+.remove-wish { position: absolute; top: 10px; right: 22px; z-index: 2; }
+.card-img-top { object-fit: cover; aspect-ratio: 4/3; }
+.product-img { object-fit: cover; padding: 0; }
+.site-footer { background: #111827; color: #9ca3af; padding: 4rem 0 1.5rem; margin-top: 3rem; }
+.site-footer h6 { color: #fff; font-weight: 600; margin-bottom: 1rem; }
+.site-footer a { color: #cbd5e1; text-decoration: none; line-height: 2; }
+.site-footer a:hover { color: #fff; }
+.footer-brand { color: #fff !important; }
+.social a { display: inline-flex; width: 36px; height: 36px; border-radius: 50%; background: #1f2937; align-items: center; justify-content: center; margin-right: 6px; }
+.payments i { font-size: 1.8rem; margin-right: 8px; color: #cbd5e1; }
+.footer-bottom { border-top: 1px solid #1f2937; margin-top: 2rem; padding-top: 1.25rem; text-align: center; font-size: .85rem; }
+#toast-wrap { position: fixed; bottom: 24px; right: 24px; z-index: 2000; }
+.shop-toast { background: #111827; color: #fff; padding: 12px 18px; border-radius: 12px; margin-top: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.2); transition: opacity .4s; }
+.shop-toast.hide { opacity: 0; }
