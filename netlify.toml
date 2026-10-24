@@ -1,0 +1,3 @@
+[build]
+  # The static site lives in this subfolder, not the repository root
+  publish = "Ecommerce web"
